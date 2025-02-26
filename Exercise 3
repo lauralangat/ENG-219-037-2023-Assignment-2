@@ -1,0 +1,206 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "colab": {
+      "provenance": [],
+      "authorship_tag": "ABX9TyNpNyWsiOsqLLKc4JJaDn/H",
+      "include_colab_link": true
+    },
+    "kernelspec": {
+      "name": "python3",
+      "display_name": "Python 3"
+    },
+    "language_info": {
+      "name": "python"
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "view-in-github",
+        "colab_type": "text"
+      },
+      "source": [
+        "<a href=\"https://colab.research.google.com/github/lauralangat/ENG-219-037-2023-Assignment-2/blob/main/Exercise%203\" target=\"_parent\"><img src=\"https://colab.research.google.com/assets/colab-badge.svg\" alt=\"Open In Colab\"/></a>"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "# Define a float\n",
+        "y = 1.\n",
+        "print(y)\n",
+        "print(type(y))\n",
+        "\n",
+        "# Convert float to integer with the int function\n",
+        "z = int(y)\n",
+        "print(z)\n",
+        "print(type(z))\n"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "p1Mxbtd6AbUX",
+        "outputId": "9aa79781-0464-44f7-c380-75f8da1440ee"
+      },
+      "execution_count": 6,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "1.0\n",
+            "<class 'float'>\n",
+            "1\n",
+            "<class 'int'>\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "def get_expected_cost(beds, baths, has_basement):\n",
+        "    # Base cost for 0 bedrooms, 0 bathrooms, no basement\n",
+        "    value = 80000\n",
+        "\n",
+        "    # Add the cost for the bedrooms\n",
+        "    value += beds * 30000\n",
+        "\n",
+        "    # Add the cost for the bathrooms\n",
+        "    value += baths * 10000\n",
+        "\n",
+        "    # Add the cost for the basement if it exists\n",
+        "    if has_basement:\n",
+        "        value += 40000\n",
+        "\n",
+        "    return value\n"
+      ],
+      "metadata": {
+        "id": "Y1nh4kd7Cf0E"
+      },
+      "execution_count": 7,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "print(3 * True)  # Output: 3, because 3 * 1 = 3\n",
+        "print(-3.1 * True)  # Output: -3.1, because -3.1 * 1 = -3.1\n",
+        "print(type(\"abc\" * False))  # Output: <class 'str'>, because multiplying by False results in an empty string, which is still a string.\n",
+        "print(len(\"abc\" * False))  # Output: 0, because the empty string has a length of 0.\n"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "3fuM389fC33c",
+        "outputId": "8b55ae20-b542-4cd7-db37-4c34b67001cd"
+      },
+      "execution_count": 8,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "3\n",
+            "-3.1\n",
+            "<class 'str'>\n",
+            "0\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "def get_expected_cost(beds, baths, has_basement):\n",
+        "    # Start with the base cost\n",
+        "    value = 80000\n",
+        "\n",
+        "    # Add cost for bedrooms\n",
+        "    value += beds * 30000\n",
+        "\n",
+        "    # Add cost for bathrooms\n",
+        "    value += baths * 10000\n",
+        "\n",
+        "    # Add cost for basement if it exists\n",
+        "    if has_basement:\n",
+        "        value += 40000\n",
+        "\n",
+        "    return value\n"
+      ],
+      "metadata": {
+        "id": "3iAtOEvWDOC0"
+      },
+      "execution_count": 9,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "0\n",
+        "1\n",
+        "1\n",
+        "2\n",
+        "3\n"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "UCnbJgA2Die_",
+        "outputId": "f9528115-b4ae-4ebe-992d-63f2d7a39b43"
+      },
+      "execution_count": 10,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": [
+              "3"
+            ]
+          },
+          "metadata": {},
+          "execution_count": 10
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "def cost_of_project(engraving, solid_gold):\n",
+        "    # Determine base cost\n",
+        "    if solid_gold:\n",
+        "        base_cost = 100\n",
+        "        engraving_cost = 10\n",
+        "    else:\n",
+        "        base_cost = 50\n",
+        "        engraving_cost = 7\n",
+        "\n",
+        "    # Calculate total engraving cost\n",
+        "    engraving_units = len(engraving)  # Count the number of characters\n",
+        "    total_cost = base_cost + (engraving_units * engraving_cost)\n",
+        "\n",
+        "    return total_cost\n"
+      ],
+      "metadata": {
+        "id": "N745eO8HD1I3"
+      },
+      "execution_count": 11,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [],
+      "metadata": {
+        "id": "zKndOJEzBJby"
+      },
+      "execution_count": null,
+      "outputs": []
+    }
+  ]
+}
