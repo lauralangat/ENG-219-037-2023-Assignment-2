@@ -1,0 +1,248 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "colab": {
+      "provenance": [],
+      "authorship_tag": "ABX9TyOAsXYFXiGt3Xj+dbTJkHhS",
+      "include_colab_link": true
+    },
+    "kernelspec": {
+      "name": "python3",
+      "display_name": "Python 3"
+    },
+    "language_info": {
+      "name": "python"
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "view-in-github",
+        "colab_type": "text"
+      },
+      "source": [
+        "<a href=\"https://colab.research.google.com/github/lauralangat/ENG-219-037-2023-Assignment-2/blob/main/Exercise%204\" target=\"_parent\"><img src=\"https://colab.research.google.com/assets/colab-badge.svg\" alt=\"Open In Colab\"/></a>"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "def get_grade(score):\n",
+        "    if score >= 90:\n",
+        "        return \"A\"\n",
+        "    elif score >= 80:\n",
+        "        return \"B\"\n",
+        "    elif score >= 70:\n",
+        "        return \"C\"\n",
+        "    elif score >= 60:\n",
+        "        return \"D\"\n",
+        "    else:\n",
+        "        return \"F\"\n"
+      ],
+      "metadata": {
+        "id": "PSFwCMpBFRsX"
+      },
+      "execution_count": 12,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "def cost_of_project(engraving, solid_gold):\n",
+        "    # Count the number of engraved units (characters in the string)\n",
+        "    num_units = len(engraving)\n",
+        "\n",
+        "    # Calculate cost based on the type of ring (solid gold or gold plated)\n",
+        "    if solid_gold == True:\n",
+        "        cost = 100 + (num_units * 10)\n",
+        "    else:\n",
+        "        cost = 50 + (num_units * 7)\n",
+        "\n",
+        "    return cost\n"
+      ],
+      "metadata": {
+        "id": "fWP-2osDFhwk"
+      },
+      "execution_count": 13,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "def get_water_bill(num_gallons):\n",
+        "    # Initialize bill variable\n",
+        "    bill = 0.0\n",
+        "\n",
+        "    # Tier 1: 0 to 8,000 gallons\n",
+        "    if num_gallons <= 8000:\n",
+        "        bill = num_gallons / 1000 * 5\n",
+        "    # Tier 2: 8,001 to 22,000 gallons\n",
+        "    elif num_gallons <= 22000:\n",
+        "        bill = 8 * 5 + (num_gallons - 8000) / 1000 * 6\n",
+        "    # Tier 3: 22,001 to 30,000 gallons\n",
+        "    elif num_gallons <= 30000:\n",
+        "        bill = 8 * 5 + 14 * 6 + (num_gallons - 22000) / 1000 * 7\n",
+        "    # Tier 4: 30,001+ gallons\n",
+        "    else:\n",
+        "        bill = 8 * 5 + 14 * 6 + 8 * 7 + (num_gallons - 30000) / 1000 * 10\n",
+        "\n",
+        "    return bill\n"
+      ],
+      "metadata": {
+        "id": "l57oD2vOF1tO"
+      },
+      "execution_count": 14,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "def get_phone_bill(gb):\n",
+        "    # Base cost for 15GB\n",
+        "    bill = 100\n",
+        "\n",
+        "    # If the customer uses more than 15GB, calculate the additional cost\n",
+        "    if gb > 15:\n",
+        "        extra_gb = gb - 15\n",
+        "        # Each additional GB costs $100\n",
+        "        bill += extra_gb * 100\n",
+        "\n",
+        "    return bill\n"
+      ],
+      "metadata": {
+        "id": "g514YBAMGE3-"
+      },
+      "execution_count": 15,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "# Import necessary functions\n",
+        "#from learntools.intro_to_programming.ex4q5 import excess_sugar, excess_saturated_fat, excess_trans_fat, excess_sodium, excess_calories\n",
+        "\n",
+        "def get_labels(food_type, serving_size, calories_per_serving, saturated_fat_g, trans_fat_g, sodium_mg, sugars_g):\n",
+        "    # Print messages based on findings\n",
+        "    #if excess_sugar(sugars_g, calories_per_serving) == True:\n",
+        "        print(\"EXCESO AZÚCARES / EXCESS SUGAR\")\n",
+        "    #if excess_saturated_fat(saturated_fat_g, calories_per_serving) == True:\n",
+        "        print(\"EXCESO GRASAS SATURADAS / EXCESS SATURATED FAT\")\n",
+        "    #if excess_trans_fat(trans_fat_g, calories_per_serving) == True:\n",
+        "        print(\"EXCESO GRASAS TRANS / EXCESS TRANS FAT\")\n",
+        "    #if excess_sodium(calories_per_serving, sodium_mg) == True:\n",
+        "        print(\"EXCESO SODIO / EXCESS SODIUM\")\n",
+        "    #if excess_calories(food_type, calories_per_serving, serving_size) == True:\n",
+        "        print(\"EXCESO CALORÍAS / EXCESS CALORIES\")\n",
+        "\n",
+        "# Zucaritas Cereal (Serving size: 30g)\n",
+        "# calories_per_serving = 110\n",
+        "# saturated_fat_g = 0.5\n",
+        "# trans_fat_g = 0\n",
+        "# sodium_mg = 180\n",
+        "# sugars_g = 9\n",
+        "print(\"Zucaritas Cereal:\")\n",
+        "get_labels(\"solid\", 30, 110, 0.5, 0, 180, 9)\n",
+        "print(\"\\n\")\n",
+        "\n",
+        "# Mozzarella Sticks (Serving size: 28g)\n",
+        "# calories_per_serving = 90\n",
+        "# saturated_fat_g = 5\n",
+        "# trans_fat_g = 0\n",
+        "# sodium_mg = 300\n",
+        "# sugars_g = 0\n",
+        "print(\"Mozzarella Sticks:\")\n",
+        "get_labels(\"solid\", 28, 90, 5, 0, 300, 0)\n",
+        "print(\"\\n\")\n",
+        "\n",
+        "# Pillsbury Cookies (Serving size: 34g)\n",
+        "# calories_per_serving = 140\n",
+        "# saturated_fat_g = 3\n",
+        "# trans_fat_g = 0\n",
+        "# sodium_mg = 85\n",
+        "# sugars_g = 10\n",
+        "print(\"Pillsbury Cookies:\")\n",
+        "get_labels(\"solid\", 34, 140, 3, 0, 85, 10)\n",
+        "print(\"\\n\")\n",
+        "\n",
+        "# Sunkist Orange Soda (Serving size: 355ml)\n",
+        "# calories_per_serving = 180\n",
+        "# saturated_fat_g = 0\n",
+        "# trans_fat_g = 0\n",
+        "# sodium_mg = 65\n",
+        "# sugars_g = 48\n",
+        "print(\"Sunkist Orange Soda:\")\n",
+        "get_labels(\"liquid\", 355, 180, 0, 0, 65, 48)\n",
+        "print(\"\\n\")\n",
+        "\n",
+        "# Bologna (For reference)\n",
+        "# Serving size: 32g\n",
+        "# calories_per_serving = 110\n",
+        "# saturated_fat_g = 2.5\n",
+        "# trans_fat_g = 0\n",
+        "# sodium_mg = 400\n",
+        "# sugars_g = 1\n",
+        "print(\"Bologna:\")\n",
+        "get_labels(\"solid\", 32, 110, 2.5, 0, 400, 1)\n",
+        "print(\"\\n\")"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "fKJL4LsfIEF_",
+        "outputId": "4bda00a9-cf94-4bcc-c147-533f6c04e288"
+      },
+      "execution_count": 20,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Zucaritas Cereal:\n",
+            "EXCESO AZÚCARES / EXCESS SUGAR\n",
+            "EXCESO GRASAS SATURADAS / EXCESS SATURATED FAT\n",
+            "EXCESO GRASAS TRANS / EXCESS TRANS FAT\n",
+            "EXCESO SODIO / EXCESS SODIUM\n",
+            "EXCESO CALORÍAS / EXCESS CALORIES\n",
+            "\n",
+            "\n",
+            "Mozzarella Sticks:\n",
+            "EXCESO AZÚCARES / EXCESS SUGAR\n",
+            "EXCESO GRASAS SATURADAS / EXCESS SATURATED FAT\n",
+            "EXCESO GRASAS TRANS / EXCESS TRANS FAT\n",
+            "EXCESO SODIO / EXCESS SODIUM\n",
+            "EXCESO CALORÍAS / EXCESS CALORIES\n",
+            "\n",
+            "\n",
+            "Pillsbury Cookies:\n",
+            "EXCESO AZÚCARES / EXCESS SUGAR\n",
+            "EXCESO GRASAS SATURADAS / EXCESS SATURATED FAT\n",
+            "EXCESO GRASAS TRANS / EXCESS TRANS FAT\n",
+            "EXCESO SODIO / EXCESS SODIUM\n",
+            "EXCESO CALORÍAS / EXCESS CALORIES\n",
+            "\n",
+            "\n",
+            "Sunkist Orange Soda:\n",
+            "EXCESO AZÚCARES / EXCESS SUGAR\n",
+            "EXCESO GRASAS SATURADAS / EXCESS SATURATED FAT\n",
+            "EXCESO GRASAS TRANS / EXCESS TRANS FAT\n",
+            "EXCESO SODIO / EXCESS SODIUM\n",
+            "EXCESO CALORÍAS / EXCESS CALORIES\n",
+            "\n",
+            "\n",
+            "Bologna:\n",
+            "EXCESO AZÚCARES / EXCESS SUGAR\n",
+            "EXCESO GRASAS SATURADAS / EXCESS SATURATED FAT\n",
+            "EXCESO GRASAS TRANS / EXCESS TRANS FAT\n",
+            "EXCESO SODIO / EXCESS SODIUM\n",
+            "EXCESO CALORÍAS / EXCESS CALORIES\n",
+            "\n",
+            "\n"
+          ]
+        }
+      ]
+    }
+  ]
+}
