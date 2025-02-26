@@ -1,0 +1,176 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "colab": {
+      "provenance": [],
+      "authorship_tag": "ABX9TyNlkCnE66DJXW6ZqmsU/eTI",
+      "include_colab_link": true
+    },
+    "kernelspec": {
+      "name": "python3",
+      "display_name": "Python 3"
+    },
+    "language_info": {
+      "name": "python"
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "view-in-github",
+        "colab_type": "text"
+      },
+      "source": [
+        "<a href=\"https://colab.research.google.com/github/lauralangat/ENG-219-037-2023-Assignment-2/blob/main/Exercise%205\" target=\"_parent\"><img src=\"https://colab.research.google.com/assets/colab-badge.svg\" alt=\"Open In Colab\"/></a>"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "# Do not change: Initial menu for your restaurant\n",
+        "menu = ['stewed meat with onions', 'bean soup', 'risotto with trout and shrimp',\n",
+        "       'fish soup with cream and onion', 'gyro']\n",
+        "\n",
+        "# TODO: remove 'bean soup', and add 'roasted beet salad' to the end of the menu\n",
+        "menu.remove('bean soup')  # Removes 'bean soup' from the list\n",
+        "menu.append('roasted beet salad')  # Adds 'roasted beet salad' to the end of the list\n",
+        "\n",
+        "\n",
+        "\n"
+      ],
+      "metadata": {
+        "id": "t1EBMiUFIyCd"
+      },
+      "execution_count": 27,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "# Do not change: Number of customers each day for the last month\n",
+        "num_customers = [137, 147, 135, 128, 170, 174, 165, 146, 126, 159,\n",
+        "                 141, 148, 132, 147, 168, 153, 170, 161, 148, 152,\n",
+        "                 141, 151, 131, 149, 164, 163, 143, 143, 166, 171]\n",
+        "\n",
+        "# TODO: Fill in values for the variables below\n",
+        "avg_first_seven = sum(num_customers[:7]) / 7  # Average of the first 7 days\n",
+        "avg_last_seven = sum(num_customers[-7:]) / 7   # Average of the last 7 days\n",
+        "max_month = max(num_customers)  # Maximum number of customers in the month\n",
+        "min_month = min(num_customers)  # Minimum number of customers in the month\n",
+        "\n",
+        "\n",
+        "\n"
+      ],
+      "metadata": {
+        "id": "aVlTC6bWJqJc"
+      },
+      "execution_count": 28,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "\n",
+        "alphabet = \"A.B.C.D.E.F.G.H.I.J.K.L.M.N.O.P.Q.R.S.T.U.V.W.X.Y.Z\"\n",
+        "address = \"Mr. H. Potter,The cupboard under the Stairs,4 Privet Drive,Little Whinging,Surrey\"\n",
+        "\n",
+        "# TODO: Convert strings into Python lists\n",
+        "letters = alphabet.split(\".\")  # Splitting by periods to get a list of letters\n",
+        "formatted_address = address.split(\",\")  # Splitting by commas to get the address list\n",
+        "\n",
+        "\n",
+        "\n"
+      ],
+      "metadata": {
+        "id": "7DUtvHfrJ5Bc"
+      },
+      "execution_count": 25,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "def percentage_liked(ratings):\n",
+        "    list_liked = [i >= 4 for i in ratings]\n",
+        "    # Calculate the percentage of True values in list_liked\n",
+        "    percentage_liked = sum(list_liked) / len(ratings)  # sum counts the True values, len gives total number of ratings\n",
+        "    return percentage_liked\n",
+        "\n",
+        "\n",
+        "print(percentage_liked([1, 2, 3, 4, 5, 4, 5, 1]))\n"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "gVnFE6oBLCX7",
+        "outputId": "dbde8346-3cec-44de-97e9-e7751ee61f05"
+      },
+      "execution_count": 26,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "0.5\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "# TODO: Edit the function\n",
+        "def percentage_growth(num_users, yrs_ago):\n",
+        "    growth = (num_users[len(num_users)-1] - num_users[len(num_users)-yrs_ago])/num_users[len(num_users)-2]\n",
+        "    return growth\n",
+        "\n",
+        "# Do not change: Variable for calculating some test examples\n",
+        "num_users_test = [920344, 1043553, 1204334, 1458996, 1503323, 1593432, 1623463, 1843064, 1930992, 2001078]\n",
+        "\n",
+        "# Do not change: Should return .036\n",
+        "print(percentage_growth(num_users_test, 1))\n",
+        "\n",
+        "# Do not change: Should return 0.66\n",
+        "print(percentage_growth(num_users_test, 7))\n",
+        "\n",
+        "# Do not change: Check your answer\n",
+        "\n",
+        "# Do not change: Variable for calculating some test examples\n",
+        "num_users_test = [920344, 1043553, 1204334, 1458996, 1503323, 1593432, 1623463, 1843064, 1930992, 2001078]\n",
+        "\n",
+        "# Do not change: Should return .036\n",
+        "print(percentage_growth(num_users_test,1))\n",
+        "\n",
+        "# Do not change: Should return 0.66\n",
+        "print(percentage_growth(num_users_test,7))\n",
+        "\n",
+        "\n",
+        "\n",
+        "\n"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "LH4ZC3D2LW3L",
+        "outputId": "9d0741c7-ffd9-4a01-fd32-ed52bf28994a"
+      },
+      "execution_count": 35,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "0.0\n",
+            "0.2807272117129434\n",
+            "0.0\n",
+            "0.2807272117129434\n"
+          ]
+        }
+      ]
+    }
+  ]
+}
